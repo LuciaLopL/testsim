@@ -29,9 +29,13 @@ echo "Running STAR alignment..."
     mkdir -p out/star/${sampleid}
     STAR --runThreadN 4 --genomeDir res/genome/star_index/ --readFilesIn out/cutadapt/${sampleid}_1.trimmed.fastq.gz out/cutadapt/${sampleid}_2.trimmed.fastq.gz --readFilesCommand zcat --outFileNamePrefix out/star/${sampleid}/
     echo
+done
+
+	#Generate a report with MultiQC
+echo "Running MultiQC..."
+	multiqc -o out/multiqc /home/vant/testsim
 
 
-done 
 
 
 
