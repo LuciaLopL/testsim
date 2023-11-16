@@ -35,7 +35,10 @@ done
 echo "Running MultiQC..."
 	multiqc -o out/multiqc /home/vant/testsim
 
-
+	#Conda environment information
+echo "Conda environment saved"
+	mkdir envs 
+	conda env export > envs/rna-seq.yaml
 
 
 
